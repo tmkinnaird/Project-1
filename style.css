@@ -1,3 +1,108 @@
-* {
-    background-color: red;
+
+body {
+    background-image: url(https://media3.giphy.com/media/3orieQiPcJ8vz0fks0/giphy_s.gif);
+    width: 100%;
+    height: 100vh;
+    font-family: "Open Sans", sans-serif;
+    background-size: contain;
+    color: yellow;
 }
+body > h1 {
+    color: rgb(63, 63, 206);
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
+    background-color: rgb(216, 136, 32);
+    margin: 20px;
+    padding: 3px;
+}
+
+h2 {
+  color: whitesmoke;
+}
+
+.general-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+
+.modal {
+    background-color: brown;
+    padding: 30px;
+    width: 50vw;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-45%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+  }
+  
+  .modal.open {
+    display: block;
+  }
+  
+  .carousel {
+    background-color: black;
+    padding: 35px;
+    width: 45vw;
+    max-width: 500px;
+    text-align: left;
+    border-radius: 8px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-45%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+  }
+  
+  .carousel.open {
+    display: block;
+  }
+  
+  .carousel img {
+    width: 100%;
+  }
+
+  .cast {
+      background-color: yellow;
+      padding: 18px;
+      position: fixed;
+      left: 45%;
+      font-size: 25px;
+  }
+
+  .reset {
+      background-color: hotpink;
+      font-size: 20px;
+      padding: 10px;
+      position: fixed;
+      left: 35%
+}
+
+  .upgrade {
+      background-color: paleturquoise;
+      font-size: 20px;
+      padding: 10px;
+      position: fixed;
+      left: 56%;
+  }
+
+  .begin-game {
+      color: white;
+      background-color: blue;
+      top: 25%;
+      left: 40%;
+      font-size: 40px;
+      position: fixed
+      
+  }

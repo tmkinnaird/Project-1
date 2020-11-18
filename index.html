@@ -4,10 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Arthur showed me how to deploy</title>
+    <script defer src="app.js"></script>
+    <title>Project 1</title>
 </head>
 <body>
-    <h1>Hello World!!!</h1>
-    <script src=app.js></script>
+    <h1>Big Fish, Little Pond</h1>
+    
+    <!-- Fish Home -->
+    <section id="fish-home">
+        <!-- Fish div -->
+        <div class="control-panel flex-container">
+            <div class="controls">
+                <button class="cast">
+                    Cast
+                </button>
+                <button class='reset'>
+                    reset
+                </button>
+                <button class="upgrade">
+                    upgrade
+                </button>
+            </div>
+            <button class="begin-game">Start Game</button>
+            <div class="life-stats">
+                <div class="strength btn">
+                    Fish: <span>0</span>
+                </div>
+                <div class="age btn">
+                    Computer fish: <span>0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Carousel -->
+    <div class= "carousel">
+        <h2>Where do you want to fish?</h2>
+        <button class="carousel-select">Select</button>
+        <img src="" alt="">
+        <button class="carousel-previous">Previous</button>
+        <button class="carousel-next">Next</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal">
+        <h2>You will be fishing against the computer. As we know, fishing is a game of chance. 
+            This is no different. Catch fish and upgrade your gear. The more you catch, the more you get. </h2>
+        <button class ="get-started">Get Started</button>
+    </div>
 </body>
 </html>
