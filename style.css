@@ -5,6 +5,7 @@ body {
     height: 100vh;
     font-family: "Open Sans", sans-serif;
     background-size: contain;
+    background-repeat: no-repeat;
     color: yellow;
 }
 body > h1 {
@@ -94,7 +95,7 @@ h2 {
       font-size: 20px;
       padding: 10px;
       position: fixed;
-      left: 56%;
+      left: 57%;
   }
 
   .begin-game {
