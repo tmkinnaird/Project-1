@@ -1,12 +1,12 @@
 
 body {
     background-image: url(https://media3.giphy.com/media/3orieQiPcJ8vz0fks0/giphy_s.gif);
-    width: 100%;
     height: 100vh;
     font-family: "Open Sans", sans-serif;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     color: yellow;
+    background-position-y: bottom ;
 }
 body > h1 {
     color: rgb(63, 63, 206);
@@ -28,9 +28,27 @@ h2 {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-  
 
-.modal {
+#catch-fish {
+    background-color: brown;
+    padding: 30px;
+    width: 50vw;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 15px;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-45%);
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: none;
+  }
+  #catch-fish.open {
+      display: block;
+  }
+  
+  .modal {
     background-color: brown;
     padding: 30px;
     width: 50vw;
