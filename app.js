@@ -92,24 +92,21 @@ let totalFish = 0;
 // Upgrade button
 // When you get catch enough fish, you can upgrade your gear
 
-const randomWeight = Math.floor(Math.random()* 10);
-const randomLength = Math.floor(Math.random()* 10);
 const smallFish = ['bluegill', 'crappie', 'bass'];
 const bigFish = ['halibut', 'yellowfin', 'swordfish'];
-const randomType = smallFish[Math.floor(Math.random() * 3)];;
-const randomPercentage = Math.floor(Math.random()* 10);
+
+
 
 
 class Fish {
-    constructor() {
-        this.weight = randomWeight;
-        this.length = randomLength;
-        this.type = randomType;
-        this.percentage = randomPercentage;
+    constructor(weight, length, type, percentage) {
+        this.weight = weight;
+        this.length = length;
+        this.type = type;
+        this.percentage = percentage;
     }
 }
-let newFish = new Fish()
-console.log(newFish);
+
 
 class Gear {
     constructor(cost, usp){
@@ -129,16 +126,27 @@ const deepSeaFish = ['halibut', 'yellowfin', 'swordfish'];
  }
 
  const cast = () => {
+
+const randomWeight = Math.floor(Math.random()* 10);
+const randomLength = Math.floor(Math.random()* 10);
+const randomType = smallFish[Math.floor(Math.random() * 3)];
+const randomPercentage = Math.floor(Math.random()* 7);
+    let newFish = new Fish(randomWeight, randomLength, randomType, randomPercentage);
+    console.log(newFish);
      let random = Math.floor(Math.random() *10);
      if (random <= newFish.percentage) {
-       catchFishModal.innerHTML = `<h1>You Caught The Fish</h1>`
+       catchFishModal.innerHTML = `
+            <h1>You Caught Dinner</h1> 
+            <p>${newFish.type} weight:${newFish.weight}lb length:${newFish.length}in</p>
+        `
          catchFishModal.classList.toggle('open');
             totalFish+=1;
+            console.log(myFish);
         myFish.innerText = totalFish;
      } else {
-         catchFishModal.innerHTML = `<h1>You Suck</h1>`
+         catchFishModal.innerHTML = `<h1>Doh! You Caught a Duff Beer</h1>`
          catchFishModal.classList.toggle('open');
-         console.log('You suck');
+         console.log('nope');
      }
     
  }
