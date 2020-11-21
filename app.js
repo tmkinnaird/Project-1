@@ -12,6 +12,7 @@ const upgradeButton = document.querySelector('.upgrade');
 const castButton = document.querySelector('.cast');
 const catchFishModal = document.querySelector('#catch-fish');
 const myFish = document.querySelector('#myFish');
+const compFish = document.querySelector('#computer-fish');
 
 
 
@@ -79,6 +80,7 @@ const openCarousel = () => {
 // Start on functionality 
 let action = null;
 let totalFish = 0;
+let compFishCount = 0;
 
 // Reset button 
 // Set fish caught to 0, number of computer fish caught to 0
@@ -124,32 +126,86 @@ const deepSeaFish = ['halibut', 'yellowfin', 'swordfish'];
 
      }
  }
-
- const cast = () => {
-
+ class Comp {
+    constructor(weight, length, type, percentage) {
+        this.weight = weight;
+        this.length = length;
+        this.type = type;
+        this.percentage = percentage;
+    }
+ }
+ let newComp = new Comp(8, 10, 6, 15);
+ 
+ const checkWin = () => {
+    if (myFish.innerText == '2') {
+        catchFishModal.innerHTML = `
+        <h1>You have won this game!</h1>
+        `
+        console.log('won');
+        } else if (compFish.innerText == '2') {
+        catchFishModal.innerHTML = `
+        <h1>The Computer Won!</h1>
+        `
+    }
+ }
+ const compCast = () => {
+    
+    const randomWeight = Math.floor(Math.random()* 10);
+    const randomLength = Math.floor(Math.random()* 10);
+    const randomType = smallFish[Math.floor(Math.random()* 3)];
+    const randomPercentage = Math.floor(Math.random()* 7);
+        let newFish = new Fish(randomWeight, randomLength, randomType, randomPercentage);
+        console.log(newFish);
+         let random = Math.floor(Math.random()* 10);
+         if (random <= newFish.percentage) {
+           catchFishModal.innerHTML = `
+                <h1>The Computer Caught Dinner</h1> 
+                <p>${newFish.type} weight:${newFish.weight}lb length:${newFish.length}in</p>
+            `
+            
+                compFishCount+=1;
+                console.log(myFish);
+            compFish.innerText = compFishCount;
+         } else {
+             catchFishModal.innerHTML = `<h1>Yes! The Dingus Computer Caught a Duff Beer</h1>`
+           
+             console.log('nope');
+         }
+        }
+const cast = () => {
+   
+catchFishModal.classList.remove('open');
 const randomWeight = Math.floor(Math.random()* 10);
 const randomLength = Math.floor(Math.random()* 10);
-const randomType = smallFish[Math.floor(Math.random() * 3)];
-const randomPercentage = Math.floor(Math.random()* 7);
+const randomType = smallFish[Math.floor(Math.random()* 3)];
+const randomPercentage = Math.floor(Math.random()* 10);
     let newFish = new Fish(randomWeight, randomLength, randomType, randomPercentage);
     console.log(newFish);
-     let random = Math.floor(Math.random() *10);
+     let random = Math.floor(Math.random()* 7);
      if (random <= newFish.percentage) {
        catchFishModal.innerHTML = `
             <h1>You Caught Dinner</h1> 
             <p>${newFish.type} weight:${newFish.weight}lb length:${newFish.length}in</p>
         `
-         catchFishModal.classList.toggle('open');
+        
             totalFish+=1;
             console.log(myFish);
         myFish.innerText = totalFish;
      } else {
          catchFishModal.innerHTML = `<h1>Doh! You Caught a Duff Beer</h1>`
-         catchFishModal.classList.toggle('open');
+       
          console.log('nope');
      }
-    
+     catchFishModal.classList.toggle('open');
+    setTimeout(() => {
+        compCast(); 
+        checkWin(castButton.removeEventListener);
+    },  1000);
+  
  }
+
+
+ 
  beginButton.addEventListener('click', toggleModal);
  carouselNext.addEventListener('click', changeSlideNext);
  carouselPrevious.addEventListener('click', changeSlidePrevious);
