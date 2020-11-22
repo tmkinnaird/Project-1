@@ -7,8 +7,8 @@ const carouselNext = document.querySelector('.carousel-next');
 const carouselPrevious = document.querySelector('.carousel-previous');
 const carouselSelect = document.querySelector('.carousel-select');
 const getStarted = document.querySelector('.get-started');
-const resetButton = document.querySelector('.reset');
-const upgradeButton = document.querySelector('.upgrade');
+// const resetButton = document.querySelector('.reset');
+// const upgradeButton = document.querySelector('.upgrade');
 const castButton = document.querySelector('.cast');
 const catchFishModal = document.querySelector('#catch-fish');
 const myFish = document.querySelector('#myFish');
@@ -18,11 +18,11 @@ const compFish = document.querySelector('#computer-fish');
 
 
 const backgroundImage = [
-	'https://www.wakegov.com/parks/harrislake/PublishingImages/Fishing%20Pond.jpg',
+	'https://images.trvl-media.com/hotels/36000000/35550000/35549800/35549771/34e9340e.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium',
 	'https://d3fldh011ywsk8.cloudfront.net/wp-content/uploads/2019/02/icefishing-1024x678.jpg',
-	'https://www.fishingtipsdepot.com/images/lake-fishing.jpg',
+	'https://www.visitbrazosport.com/wp-content/uploads/2019/02/Bastrop-Bayou-Public-Fishing-Area-2.jpg',
 	'https://wavedancercharters.com/wp-content/uploads/2018/12/deep-sea-fishing-charter-1024x1024.jpeg',
-	'https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,h_452,q_75,w_982/http://res.cloudinary.com/simpleview/image/upload/v1473450716/clients/lanecounty/mckenzie_river_drift_boat_fishing_courtesy_of_eugene_cascades_coast_20__efceb4d1-c77e-48ef-bbba-5bbfbcdb6f56.png',
+	'https://www.sandpiperportaransas.com/wp-content/uploads/2014/09/Gulf-Fishing-at-Night.jpg',
 	'https://bassfishinginsider.com/wp-content/uploads/2020/07/fast-bass-boat-big-1.jpeg'
 ]
 
@@ -89,7 +89,7 @@ let compFishCount = 0;
 // Cast button 
 // Catch fish at a random interval 
 // Catch fish and the counter goes up
-// Computer casts and fish counter goes up
+// Computer casts and fish counter goes up if caught
 
 // Upgrade button
 // When you get catch enough fish, you can upgrade your gear
@@ -110,22 +110,22 @@ class Fish {
 }
 
 
-class Gear {
-    constructor(cost, usp){
-        this.cost = cost;
-        this.usp = usp;
-    }
-}
-const deepSeaFish = ['halibut', 'yellowfin', 'swordfish'];
+// class Gear {
+//     constructor(cost, usp){
+//         this.cost = cost;
+//         this.usp = usp;
+//     }
+// }
+// const deepSeaFish = ['halibut', 'yellowfin', 'swordfish'];
 
- class Boat extends Gear {
-     constructor(cost, usp) {
-         super(cost, usp)
-     }
-     deepSeaCast(){
+//  class Boat extends Gear {
+//      constructor(cost, usp) {
+//          super(cost, usp)
+//      }
+//      deepSeaCast(){s
 
-     }
- }
+//      }
+//  }
  class Comp {
     constructor(weight, length, type, percentage) {
         this.weight = weight;
@@ -137,12 +137,12 @@ const deepSeaFish = ['halibut', 'yellowfin', 'swordfish'];
  let newComp = new Comp(8, 10, 6, 15);
  
  const checkWin = () => {
-    if (myFish.innerText == '2') {
+    if (myFish.innerText == '10') {
         catchFishModal.innerHTML = `
-        <h1>You have won this game!</h1>
+        <h1>You Win!</h1>
         `
         console.log('won');
-        } else if (compFish.innerText == '2') {
+        } else if (compFish.innerText == '10') {
         catchFishModal.innerHTML = `
         <h1>The Computer Won!</h1>
         `
@@ -167,11 +167,11 @@ const deepSeaFish = ['halibut', 'yellowfin', 'swordfish'];
                 console.log(myFish);
             compFish.innerText = compFishCount;
          } else {
-             catchFishModal.innerHTML = `<h1>Yes! The Dingus Computer Caught a Duff Beer</h1>`
+             catchFishModal.innerHTML = `<h1>Yes! The Computer's line broke</h1>`
            
              console.log('nope');
          }
-        }
+}
 const cast = () => {
    
 catchFishModal.classList.remove('open');
@@ -192,7 +192,7 @@ const randomPercentage = Math.floor(Math.random()* 10);
             console.log(myFish);
         myFish.innerText = totalFish;
      } else {
-         catchFishModal.innerHTML = `<h1>Doh! You Caught a Duff Beer</h1>`
+         catchFishModal.innerHTML = `<h1>No Good, you lost your lure!</h1>`
        
          console.log('nope');
      }
@@ -200,7 +200,7 @@ const randomPercentage = Math.floor(Math.random()* 10);
     setTimeout(() => {
         compCast(); 
         checkWin(castButton.removeEventListener);
-    },  1000);
+    },  2200);
   
  }
 
