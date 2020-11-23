@@ -15,8 +15,6 @@ const myFish = document.querySelector('#myFish');
 const compFish = document.querySelector('#computer-fish');
 
 
-
-
 const backgroundImage = [
 	'https://images.trvl-media.com/hotels/36000000/35550000/35549800/35549771/34e9340e.jpg?impolicy=fcrop&w=1200&h=800&p=1&q=medium',
 	'https://d3fldh011ywsk8.cloudfront.net/wp-content/uploads/2019/02/icefishing-1024x678.jpg',
@@ -95,7 +93,7 @@ let compFishCount = 0;
 // When you get catch enough fish, you can upgrade your gear
 
 const smallFish = ['bluegill', 'crappie', 'bass'];
-const bigFish = ['halibut', 'yellowfin', 'swordfish'];
+// const bigFish = ['halibut', 'yellowfin', 'swordfish'];
 
 
 

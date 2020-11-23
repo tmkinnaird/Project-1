@@ -6,7 +6,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     color: rgb(255, 17, 0);
-    background-position-y: bottom ;
+    background-position-y: bottom;
+    top: 0;
 }
 body > h1 {
     color: rgb(8, 8, 245);
@@ -14,7 +15,7 @@ body > h1 {
     font-size: 50px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serifs;
     background-color: rgb(216, 32, 32);
-    margin: 30px;
+    margin: 5px;
     padding: 3px;
 }
 
@@ -94,11 +95,15 @@ h2 {
 
   .cast {
       background-color: yellow;
+      color: blue;
       padding: 30px;
       position: fixed;
       left: 45%;
       font-size: 25px;
-      top: 20%;
+      top: 28%;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 0 7px 7px rgb(255, 17, 0);
   }
 
   /* .reset {
@@ -118,11 +123,25 @@ h2 {
   } */
 
   .begin-game {
-      color: white;
+      color: yellow;
       background-color: blue;
-      top: 10%;
+      border: groove .3em red;
+      border-radius: 1em;
+      top: 15%;
       left: 40%;
       font-size: 40px;
       position: fixed
       
+  }
+
+  .my-fish-btn{
+    margin: 10px;
+    padding: 60px;
+    font-size: 25px;
+  }
+
+  .fish-btn{
+    margin: 10px;
+    padding: 60px;
+    font-size: 25px;
   }
